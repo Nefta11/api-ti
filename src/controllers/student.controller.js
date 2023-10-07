@@ -11,6 +11,12 @@ studentController.getAll=async(req,res)=>{
             status:"request failed"
         })
     });
-};
+}
+
+studentController.getOne=async(req,res)=>{
+studentDAO.getOne(req.params.dni)
+.then()
+.catch();
+}
 
 module.exports=studentController;
