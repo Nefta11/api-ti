@@ -40,6 +40,6 @@ app.use(express.json());
 app.use(urlencoded({extended:false}));
 app.use(studentRouter);
 
-
+//TAREA CREAR TEACHER.MODEL OSEA TODO PERO AHI MISMO
 
 module.exports=app;
