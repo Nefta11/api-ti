@@ -25,6 +25,7 @@ console.log(req.body);
 const { urlencoded } = require('body-parser');
 const express=require('express')
 const morgan=require('morgan');
+const studentRouter=require('./routes/student.router')
 const app=express();
 //Settings
 //indica el puerto 
@@ -37,7 +38,8 @@ app.set('view engine','ejs');//iniciamos el motor de plantillas que sera usado p
 //Middlewares
 app.use(express.json());
 app.use(urlencoded({extended:false}));
-app.use(morgan('dev'));
+app.use(studentRouter);
+
 
 
 module.exports=app;
