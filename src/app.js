@@ -1,17 +1,43 @@
-const express=require('express')
-const app=express();
+/*app.get('/getAll',(req,res)=>{
+res.json({status:"peticion recibida desde el equipo de Neftali"});
+});
 
-app.use(express.json());
-
+app.post('/inser',(req,res)=>{
+console.log(req.body);
+// Aquí van las instrucciones para insertar el body a  
+//usando mongoose
+    res.json({status:"student saved"})
+}); 
 app.get('/getAll',(req,res)=>{
 res.json({status:"peticion recibida desde el equipo de Neftali"});
 });
 
 app.post('/inser',(req,res)=>{
 console.log(req.body);
+// Aquí van las instrucciones para insertar el body a  
+//usando mongoose
     res.json({status:"student saved"})
 });
+*/
 
-app.listen(3000,()=> {
-    console.log('server listening on port 3000');
-})
+
+
+const { urlencoded } = require('body-parser');
+const express=require('express')
+const morgan=require('morgan');
+const app=express();
+//Settings
+//indica el puerto 
+app.set('PORT',process.env.PORT || 3000);
+app.set('view engine','ejs');//iniciamos el motor de plantillas que sera usado para responder html
+
+
+
+
+//Middlewares
+app.use(express.json());
+app.use(urlencoded({extended:false}));
+app.use(morgan('dev'));
+
+
+module.exports=app;
