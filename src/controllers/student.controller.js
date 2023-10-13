@@ -16,8 +16,9 @@ studentController.getAll = async (req, res) => {
 studentController.getOne = async (req, res) => {
     studentDAO.getOne(req.params.dni)
         .then(student => {
+
             if (student != null) {
-                res.json(student);
+                res.render('../src/views/edit',{student});
             }
             else {
                 res.json({
@@ -47,9 +48,7 @@ studentController.insertOne=async(req,res)=>{
 studentController.updateOne=async(req,res)=>{
     studentDAO.updateOne(req.params.dni,req.body)
     .then(result=>{
-        res.json({
-            status:result
-        })
+        res.redirect('/api/students/getAll');
     })
     .catch(err=>{
         res.json({
