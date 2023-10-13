@@ -8,7 +8,7 @@ teacherController.getAll = async (req, res) => {
             res.json(teachers);
         })
         .catch(err => res.json({
-            status: "request failed"
+            status: "request failed",message:err
         }));
 };
 
@@ -25,7 +25,7 @@ teacherController.getOne = async (req, res) => {
         })
         .catch(err => {
             res.json({
-                status: "Request failed"
+                status: "Request failed",message:err
             });
         });
 };
@@ -39,7 +39,7 @@ teacherController.insertOne = async (req, res) => {
         })
         .catch(err => {
             res.json({
-                status: "request failed"
+                status: "request failed",message:err
             });
         });
 };
@@ -53,7 +53,7 @@ teacherController.updateOne = async (req, res) => {
         })
         .catch(err => {
             res.json({
-                status: "request failed"
+                status: "request failed",message:err
             });
         });
 };
@@ -67,7 +67,7 @@ teacherController.deleteOne = async (req, res) => {
         })
         .catch(err => {
             res.json({
-                status: "request failed"
+                status: "request failed",message:err
             });
         });
 };

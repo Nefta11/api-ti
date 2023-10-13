@@ -36,10 +36,11 @@ app.set('view engine','ejs');//iniciamos el motor de plantillas que sera usado p
 
 // Middlewares
 app.use(express.json());
-app.use(urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: false }));
+app.use(morgan('dev'));
 
 // Usa los enrutadores para manejar las rutas de estudiantes y maestros
-app.use('/students', studentRouter);
-app.use('/teachers', teacherRouter); // Usar rutas separadas para maestros
+app.use('/api/students', studentRouter);
+app.use('/api/teachers', teacherRouter); // Usar rutas separadas para maestros
 
 module.exports = app;
