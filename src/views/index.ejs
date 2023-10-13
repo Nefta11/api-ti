@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="row">
+        <div class="row mb-3">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
                   <a class="navbar-brand" href="#">Estudiantes</a>
@@ -56,14 +56,33 @@
                     <form action="">
                         <div class="row">
                             <div class="col-lg-6">
-                                <label for="txt_matricula"class="form-label">Matricula</label>
-                                <input type="text" id="txt_matricula" name="dni" class="form-control">
+                                <label for="txt_dni"class="form-label">Matricula</label>
+                                <input type="text" id="txt_dni" name="dni" class="form-control">
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-6">
-                                <label for="txt_nombre" class="form-label">Nombre</label>
-                                <input type="text" id="txt_nombre" name="name" class="form-control">
+                                <label for="txt_name" class="form-label">Nombre</label>
+                                <input type="text" id="txt_name" name="name" class="form-control">
+                            </div>
+                            <div class="col-lg-6">
+                                <label for="txt_lastname" class="form-label">Apellidos</label>
+                                <input type="text" id="txt_lastname" name="lastname" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-lg-6">
+                                <label for="txt_average" class="form-label">Promedio</label>
+                                <input type="text" id="txt_average" name="average" class="form-control">
+                            </div>
+                                <div class="col-lg-6">
+                                    <label for="txt_grade" class="form-label">Grado:</label>
+                                    <input type="text" id="txt_grade" name="grade" class="form-control">
+                                </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <button class="btn btn-primary">Guardar</button>
                             </div>
                         </div>
                     </form>
