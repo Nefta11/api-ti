@@ -5,7 +5,7 @@ const studentController = {}
 studentController.getAll = async (req, res) => {
     studentDAO.getAll()
         .then(students => {
-            res.render('../src/views/index')//Si fue exitoso devuelve los estudiantes
+            res.render('../src/views/index',{students})//Si fue exitoso devuelve los estudiantes
         })
         .catch(err => res.json({
             status: "request failed"//Si tenemos un error devolvemos el error 
@@ -34,9 +34,7 @@ studentController.getOne = async (req, res) => {
 studentController.insertOne=async(req,res)=>{
     studentDAO.insertOne(req.body)
     .then(result=>{
-        res.json({
-            status:result
-        })
+        res.redirect('/api/students/getAll');
     })
     .catch(err=>{
         res.json({
@@ -66,9 +64,7 @@ studentController.updateOne=async(req,res)=>{
 studentController.deleteOne=async(req,res)=>{
     studentDAO.deleteOne(req.params.dni)
     .then(result=>{
-        res.json({
-            status:result
-        })
+        res.redirect('/api/students/getAll');
     })
     .catch(err=>{
         res.json({
