@@ -23,23 +23,23 @@ console.log(req.body);
 
 
 const { urlencoded } = require('body-parser');
-const express=require('express')
-const morgan=require('morgan');
-const studentRouter=require('./routes/student.router')
-const app=express();
+const express = require('express');
+const morgan = require('morgan');
+const studentRouter = require('./routes/student.router');
+const teacherRouter = require('./routes/teachers.router'); // Agrega un enrutador para maestros
+const app = express();
 //Settings
 //indica el puerto 
 app.set('PORT',process.env.PORT || 3000);
 app.set('view engine','ejs');//iniciamos el motor de plantillas que sera usado para responder html
 
 
-
-
-//Middlewares
+// Middlewares
 app.use(express.json());
-app.use(urlencoded({extended:false}));
-app.use(studentRouter);
+app.use(urlencoded({ extended: false }));
 
-//TAREA CREAR TEACHER.MODEL OSEA TODO PERO AHI MISMO
+// Usa los enrutadores para manejar las rutas de estudiantes y maestros
+app.use('/students', studentRouter);
+app.use('/teachers', teacherRouter); // Usar rutas separadas para maestros
 
-module.exports=app;
+module.exports = app;
