@@ -5,7 +5,7 @@ const studentController = {}
 studentController.getAll = async (req, res) => {
     studentDAO.getAll()
         .then(students => {
-            res.json(students)//Si fue exitoso devuelve los estudiantes
+            res.render('../src/views/index')//Si fue exitoso devuelve los estudiantes
         })
         .catch(err => res.json({
             status: "request failed"//Si tenemos un error devolvemos el error 
