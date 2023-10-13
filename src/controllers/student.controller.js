@@ -8,7 +8,7 @@ studentController.getAll = async (req, res) => {
             res.render('../src/views/index',{students})//Si fue exitoso devuelve los estudiantes
         })
         .catch(err => res.json({
-            status: "request failed"//Si tenemos un error devolvemos el error 
+            status: "request failed",message:err//Si tenemos un error devolvemos el error 
         }))
 
 };
@@ -28,7 +28,7 @@ studentController.getOne = async (req, res) => {
 
         })
         .catch(err => {res.json({
-            status: "Request failed"
+            status: "Request failed",message:err
         })})
 }
 
@@ -39,7 +39,7 @@ studentController.insertOne=async(req,res)=>{
     })
     .catch(err=>{
         res.json({
-    status:"request failed"
+    status:"request failed",message:err
         })
     }
     );
@@ -52,7 +52,7 @@ studentController.updateOne=async(req,res)=>{
     })
     .catch(err=>{
         res.json({
-    status:"request failed"
+    status:"request failed",message:err
         })
     }
     );
@@ -67,7 +67,7 @@ studentController.deleteOne=async(req,res)=>{
     })
     .catch(err=>{
         res.json({
-    status:"request failed"
+    status:"request failed",message:err
         })
     }
     );
