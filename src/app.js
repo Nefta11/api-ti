@@ -43,4 +43,6 @@ app.use(morgan('dev'));
 app.use('/api/students', studentRouter);
 app.use('/api/teachers', teacherRouter); // Usar rutas separadas para maestros
 
+
+
 module.exports = app;
